@@ -27,21 +27,5 @@ public class Gcd {
         }
 
         return (numMayor % numMenor == 0)? numMenor: calcGcd(numMenor, (numMayor%numMenor));
-    }
-    
-    //Método para solicitar números por consola
-    public static int solicitarNumero(String mensaje){
-        int numero;
-        Scanner scr = new Scanner(System.in);
-        
-        try {
-            System.out.print("Ingrese " + mensaje + ": ");
-            numero = Integer.parseInt(scr.nextLine());
-        } catch (NumberFormatException e) {
-            numero = solicitarNumero(mensaje);
-        }
-        
-        return numero;
-    }
-    
+    }    
 }

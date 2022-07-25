@@ -182,7 +182,10 @@ public class GcdJFrame extends javax.swing.JFrame {
             numB = Integer.parseInt(fieldNum2.getText());
         } catch (NumberFormatException e) {}        
         
-        if(numA != 0 && numB != 0){
+        if(numA == 0 || numB == 0){
+            labelResultado.setText("<html><center>Ambos deben ser números<br>enteros y diferentes de 0<center><html>");
+            labelResultado.setForeground(Color.red);
+        }else{
             resultado = Gcd.calcGcd(numA, numB);
             if(resultado != 1){
                 labelResultado.setText("Resultado: GCD(" + numA + ", " + numB + ") = " + resultado);
@@ -192,9 +195,6 @@ public class GcdJFrame extends javax.swing.JFrame {
             }
             Color col = new Color(0, 143, 57);
             labelResultado.setForeground(col);
-        }else{
-            labelResultado.setText("<html><center>Ambos deben ser números<br>enteros y diferentes de 0<center><html>");
-            labelResultado.setForeground(Color.red);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
     
